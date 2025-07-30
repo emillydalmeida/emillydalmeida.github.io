@@ -2,16 +2,19 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ThemeToggle } from './ThemeToggle'
+import LanguageToggle from './LanguageToggle'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   const navLinks = [
-    { href: '#header', label: 'Início' },
-    { href: '#about', label: 'Sobre' },
-    { href: '#skills', label: 'Habilidades' },
-    { href: '#projects', label: 'Projetos' },
-    { href: '#footer', label: 'Contato' },
+    { href: '#header', label: t.navbar.home },
+    { href: '#about', label: t.navbar.about },
+    { href: '#skills', label: t.navbar.skills },
+    { href: '#projects', label: t.navbar.projects },
+    { href: '#footer', label: t.navbar.contact },
   ]
 
   return (
@@ -43,11 +46,15 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <ThemeToggle />
+            <div className="flex items-center space-x-3">
+              <LanguageToggle />
+              <ThemeToggle />
+            </div>
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
           <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

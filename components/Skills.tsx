@@ -2,25 +2,27 @@
 
 import Image from 'next/image'
 import { useAOSInitialization } from '../hooks/useAOSInitialization'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Skills = () => {
   useAOSInitialization()
+  const { t } = useLanguage()
   
   const skills = [
     { 
-      name: 'Desenvolvimento Web', 
+      name: t.skills.items.web.name, 
       icon: '/code.svg', 
-      description: 'Criação de websites e aplicações web modernas utilizando tecnologias como HTML, CSS, JavaScript e frameworks atuais.' 
+      description: t.skills.items.web.description
     },
     { 
-      name: 'Análise de Dados', 
+      name: t.skills.items.data.name, 
       icon: '/data.svg', 
-      description: 'Extração de insights valiosos através da análise estatística e visualização de dados complexos.' 
+      description: t.skills.items.data.description
     },
     { 
-      name: 'Design Digital', 
+      name: t.skills.items.design.name, 
       icon: '/design.svg', 
-      description: 'Criação de interfaces intuitivas e experiências visuais atrativas focadas na experiência do usuário.' 
+      description: t.skills.items.design.description
     }
   ]
 
@@ -29,10 +31,10 @@ const Skills = () => {
       <div className="section-container">
         <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-white mb-6">
-            Habilidades
+            {t.skills.title}
           </h2>
           <p className="text-lg text-text-secondary dark:text-gray-300 max-w-2xl mx-auto">
-            Principais áreas de expertise que desenvolvi ao longo da minha jornada profissional
+            {t.skills.subtitle}
           </p>
         </div>
 

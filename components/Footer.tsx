@@ -2,9 +2,11 @@
 
 import Image from 'next/image'
 import { useAOSInitialization } from '../hooks/useAOSInitialization'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Footer = () => {
   useAOSInitialization()
+  const { t } = useLanguage()
   
   const socialLinks = [
     { name: 'GitHub', icon: '/github.svg', url: 'https://github.com/emillydalmeida' },
@@ -18,11 +20,10 @@ const Footer = () => {
       <div className="section-container">
         <div className="text-center mb-12" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Vamos conversar?
+            {t.footer.title}
           </h2>
           <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8">
-            Estou sempre aberta a novas oportunidades e projetos interessantes.
-            Entre em contato comigo!
+            {t.footer.subtitle}
           </p>
           
           <div className="flex justify-center space-x-6">
@@ -50,18 +51,18 @@ const Footer = () => {
         <div className="border-t border-white/20 dark:border-gray-600/30 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80 dark:text-gray-300">
             <div>
-              <p>© {new Date().getFullYear()} Emilly Almeida. Todos os direitos reservados.</p>
+              <p>© {new Date().getFullYear()} Emilly Almeida. {t.footer.rightsReserved}.</p>
             </div>
             <div>
               <p>
-                Desenvolvido por Emilly | 
+                {t.footer.developedBy} | 
                 <a 
                   href="https://github.com/emillydalmeida/portfolio" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="ml-1 hover:text-white dark:hover:text-white transition-colors"
                 >
-                  Licença MIT
+                  {t.footer.license}
                 </a>
               </p>
             </div>

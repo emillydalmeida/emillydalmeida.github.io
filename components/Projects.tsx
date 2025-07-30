@@ -1,14 +1,16 @@
 import Image from 'next/image'
 import { useAOSInitialization } from '../hooks/useAOSInitialization'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Projects = () => {
   useAOSInitialization()
+  const { t } = useLanguage()
   
   const projects = [
     {
       id: 1,
-      title: 'Cinemyteca',
-      description: 'Portfólio pessoal de filmes assistidos com sistema de catalogação por gêneros, avaliações e relatórios. Desenvolvido com Next.js, Supabase e TMDB API, oferece interface responsiva, sistema de busca e filtros, além de funcionalidades administrativas para gerenciamento da coleção.',
+      title: t.projects.items.cinemyteca.title,
+      description: t.projects.items.cinemyteca.description,
       image: '/images/cinemyteca-project.png',
       liveUrl: 'https://cinemyteca.vercel.app/',
       githubUrl: 'https://github.com/emillydalmeida/Cinemyteca',
@@ -17,8 +19,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'TinCat',
-      description: 'TinCat é a rede social perfeita pra encontrar aquele gatinho dos sonhos para brincar com o seu felino! Uma aplicação divertida inspirada no Tinder, mas para conectar pets.',
+      title: t.projects.items.tincat.title,
+      description: t.projects.items.tincat.description,
       image: '/images/tincat-project.png',
       githubUrl: 'https://github.com/emillydalmeida/WebDevelopment/blob/main/11.3%20TinDog%20Project/index.html',
       technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
@@ -26,8 +28,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: 'Web Design Agency',
-      description: 'Site modelo perfeito para divulgar marca, projetos e produtos de empresas de design. Layout moderno e responsivo.',
+      title: t.projects.items.webAgency.title,
+      description: t.projects.items.webAgency.description,
       image: '/images/dev-agency-project.png',
       githubUrl: 'https://github.com/emillydalmeida/WebDevelopment/blob/main/8.4%20Web%20Design%20Agency%20Project/index.html',
       technologies: ['HTML', 'CSS', 'Responsive Design'],
@@ -39,12 +41,12 @@ const Projects = () => {
     <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="section-container">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-white mb-6">
-            Projetos em <span className="gradient-text">Destaque</span>
-          </h2>
+          <h2 
+            className="text-4xl md:text-5xl font-bold text-text-primary dark:text-white mb-6"
+            dangerouslySetInnerHTML={{ __html: t.projects.title }}
+          />
           <p className="text-lg text-text-secondary dark:text-gray-300 max-w-3xl mx-auto">
-            De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos
-            meus trabalhos mais recentes
+            {t.projects.subtitle}
           </p>
         </div>
 
@@ -103,7 +105,7 @@ const Projects = () => {
                       rel="noopener noreferrer"
                       className="btn-primary"
                     >
-                      Ver Projeto 
+                      {t.projects.viewProject}
                     </a>
                   )}
                   <a
@@ -112,7 +114,7 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     className="px-6 py-3 border-2 border-brand-primary dark:border-brand-secondary text-brand-primary dark:text-brand-secondary hover:bg-brand-primary dark:hover:bg-brand-secondary hover:text-white dark:hover:text-gray-900 rounded-lg transition-all duration-300 font-medium"
                   >
-                    Repositório 
+                    {t.projects.viewCode}
                   </a>
                 </div>
               </div>

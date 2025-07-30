@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import { useAOSInitialization } from '../hooks/useAOSInitialization'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const Header = () => {
   useAOSInitialization()
+  const { t } = useLanguage()
   
   return (
     <header id="header" className="min-h-screen flex items-center pt-20 pb-20 bg-white dark:bg-gray-900 transition-colors duration-300">
@@ -11,19 +13,16 @@ const Header = () => {
           {/* Left Content */}
           <div className="order-2 lg:order-1" data-aos="fade-up">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-primary dark:text-white mb-6 leading-tight">
-              Olá! Sou{' '}
-              <span className="gradient-text">Emilly Almeida</span>, uma{' '}
-              <span className="gradient-text">Desenvolvedora Fullstack</span>.
+              {t.header.greeting}{' '}
+              <span className="gradient-text">{t.header.name}</span>{t.header.title}.
             </h1>
             
             <p className="text-lg md:text-xl text-text-secondary dark:text-gray-300 mb-8 leading-relaxed">
-              Desenvolvedora fullstack com paixão por criar soluções eficientes e escaláveis. 
-              Com experiência em front-end e back-end, estou sempre em busca de novos 
-              desafios para transformar ideias em realidade através da tecnologia.
+              {t.header.subtitle}
             </p>
             
             <a href="#about" className="btn-primary inline-block">
-              Saiba Mais!
+              {t.header.cta}
             </a>
           </div>
 

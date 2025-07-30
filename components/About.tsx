@@ -1,8 +1,10 @@
 import Image from 'next/image'
 import { useAOSInitialization } from '../hooks/useAOSInitialization'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const About = () => {
   useAOSInitialization()
+  const { t } = useLanguage()
   
   const socialLinks = [
     { href: 'https://instagram.com/emillydalmeida', icon: '/instagram.svg', alt: 'Instagram' },
@@ -25,25 +27,22 @@ const About = () => {
           {/* Left Content */}
           <div data-aos="fade-right">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-white mb-6">
-              Sobre <span className="gradient-text">Emilly Almeida</span>
+              {t.about.title}
             </h2>
             
             <div className="space-y-6 text-text-secondary dark:text-gray-300">
               <p className="text-lg leading-relaxed">
-                Desenvolvedora fullstack com 4+ anos de experiência, especializada em 
-                criar soluções web modernas e eficientes. Formanda em Ciência da Computação 
-                pela UFC, focada em entregar código limpo e experiências de usuário excepcionais.
+                {t.about.description}
               </p>
               
               <p className="text-base">
-                Especializo-me em React, TypeScript e desenvolvimento full-stack, 
-                transformando ideias complexas em aplicações funcionais e intuitivas.
+                {t.about.extraDescription}
               </p>
             </div>
 
             {/* Technologies */}
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-text-primary dark:text-white mb-4">Tecnologias</h4>
+              <h4 className="text-lg font-semibold text-text-primary dark:text-white mb-4">{t.about.technologies}</h4>
               <div className="flex space-x-4">
                 {technologies.map((tech) => (
                   <div
@@ -65,7 +64,7 @@ const About = () => {
             
             {/* Social Links */}
             <div className="mt-8">
-              <h4 className="text-lg font-semibold text-text-primary dark:text-white mb-4">Conecte-se comigo</h4>
+              <h4 className="text-lg font-semibold text-text-primary dark:text-white mb-4">{t.about.connectWithMe}</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((link) => (
                   <a
