@@ -1,0 +1,124 @@
+import Image from 'next/image'
+
+const Projects = () => {
+  const projects = [
+    {
+      id: 1,
+      title: 'Cinemyteca',
+      description: 'Portfólio pessoal de filmes assistidos com sistema de catalogação por gêneros, avaliações e relatórios. Desenvolvido com Next.js, Supabase e TMDB API, oferece interface responsiva, sistema de busca e filtros, além de funcionalidades administrativas para gerenciamento da coleção.',
+      image: '/images/cinemyteca-project.png',
+      liveUrl: 'https://cinemyteca.vercel.app/',
+      githubUrl: 'https://github.com/emillydalmeida/Cinemyteca',
+      technologies: ['Next.js', 'Supabase', 'TMDB API', 'CSS Modules'],
+      reversed: false,
+    },
+    {
+      id: 2,
+      title: 'TinCat',
+      description: 'TinCat é a rede social perfeita pra encontrar aquele gatinho dos sonhos para brincar com o seu felino! Uma aplicação divertida inspirada no Tinder, mas para conectar pets.',
+      image: '/images/tincat-project.png',
+      githubUrl: 'https://github.com/emillydalmeida/WebDevelopment/blob/main/11.3%20TinDog%20Project/index.html',
+      technologies: ['HTML', 'CSS', 'Bootstrap', 'JavaScript'],
+      reversed: true,
+    },
+    {
+      id: 3,
+      title: 'Web Design Agency',
+      description: 'Site modelo perfeito para divulgar marca, projetos e produtos de empresas de design. Layout moderno e responsivo.',
+      image: '/images/dev-agency-project.png',
+      githubUrl: 'https://github.com/emillydalmeida/WebDevelopment/blob/main/8.4%20Web%20Design%20Agency%20Project/index.html',
+      technologies: ['HTML', 'CSS', 'Responsive Design'],
+      reversed: false,
+    },
+  ]
+
+  return (
+    <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <div className="section-container">
+        <div className="text-center mb-16" data-aos="fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
+            Projetos em <span className="gradient-text">Destaque</span>
+          </h2>
+          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
+            De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos
+            meus trabalhos mais recentes
+          </p>
+        </div>
+
+        <div className="space-y-20">
+          {projects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`grid lg:grid-cols-2 gap-12 items-center ${
+                project.reversed ? 'lg:grid-flow-col-dense' : ''
+              }`}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              {/* Project Image */}
+              <div className={`${project.reversed ? 'lg:col-start-2' : ''}`}>
+                <div className="relative group">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    width={600}
+                    height={400}
+                    className="rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-300 transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-primary to-brand-secondary opacity-0 group-hover:opacity-20 rounded-2xl transition-opacity duration-300"></div>
+                </div>
+              </div>
+
+              {/* Project Info */}
+              <div className={`${project.reversed ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                <h3 className="text-3xl font-bold text-text-primary mb-4">
+                  {project.title}
+                </h3>
+                
+                <p className="text-text-secondary mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-brand-primary/10 text-brand-primary rounded-full text-sm font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Project Links */}
+                <div className="flex flex-wrap gap-4">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      Ver Projeto 
+                    </a>
+                  )}
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white rounded-lg transition-all duration-300 font-medium"
+                  >
+                    Repositório 
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Projects

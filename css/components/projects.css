@@ -43,6 +43,22 @@
     font-weight: 500;
     text-decoration: underline;
   }
+
+  .project-links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .project-links a {
+    color: var(--brand-color);
+    transition: all 0.3s ease;
+  }
+
+  .project-links a:hover {
+    color: var(--brand-color-2);
+    transform: translateX(0.5rem);
+  }
   
   @media only screen and (max-width: 768px) {
     .projects ul li,
