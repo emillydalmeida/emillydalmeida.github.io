@@ -4,18 +4,20 @@ import { useEffect } from 'react'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import '../styles/globals.css'
+import { ThemeProvider } from '../components/ThemeProvider'
 
 export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     AOS.init({
       duration: 800,
-      once: true,
+      once: false,
       offset: 100,
+      disable: false,
     })
   }, [])
 
   return (
-    <>
+    <ThemeProvider>
       <Head>
         <title>Emilly Almeida - Desenvolvedora Fullstack</title>
         <meta name="description" content="Desenvolvedora fullstack especializada em React, Next.js, Node.js e tecnologias modernas. Confira meu portfólio e projetos." />
@@ -27,11 +29,12 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="/images/emilly-almeida.jpeg" />
         <meta property="og:url" content="https://emillydalmeida.github.io" />
         <meta property="og:type" content="website" />
-        <link rel="icon" href="/logo.svg" />
+        <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }

@@ -1,70 +1,69 @@
+'use client'
+
 import Image from 'next/image'
+import { useAOSInitialization } from '../hooks/useAOSInitialization'
 
 const Footer = () => {
+  useAOSInitialization()
+  
   const socialLinks = [
-    { href: 'mailto:emillydalmeida@gmail.com', icon: '/email.svg', alt: 'Email' },
-    { href: 'https://instagram.com/emillydalmeida', icon: '/instagram.svg', alt: 'Instagram' },
-    { href: 'https://www.linkedin.com/in/emillydalmeida/', icon: '/linkedin.svg', alt: 'LinkedIn' },
+    { name: 'GitHub', icon: '/github.svg', url: 'https://github.com/emillydalmeida' },
+    { name: 'LinkedIn', icon: '/linkedin.svg', url: 'https://linkedin.com/in/emillydalmeida' },
+    { name: 'Instagram', icon: '/instagram.svg', url: 'https://instagram.com/emillydalmeida' },
+    { name: 'Email', icon: '/email.svg', url: 'mailto:emilly@example.com' }
   ]
 
   return (
-    <footer id="footer" className="bg-gradient-to-br from-brand-primary to-brand-secondary text-white py-20">
+    <footer id="contact" className="bg-gradient-to-r from-brand-primary to-brand-secondary dark:from-gray-800 dark:to-gray-900 text-white py-16">
       <div className="section-container">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4" data-aos="fade-up">
+        <div className="text-center mb-12" data-aos="fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Vamos conversar?
           </h2>
-          
-          <p className="text-lg mb-2" data-aos="fade-up" data-aos-delay="100">
-            Desenvolvido por Emilly Almeida.
+          <p className="text-lg text-white/90 max-w-2xl mx-auto mb-8">
+            Estou sempre aberta a novas oportunidades e projetos interessantes.
+            Entre em contato comigo!
           </p>
           
-          <p className="text-lg mb-8 max-w-4xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-            Apaixonada por tecnologia e inovação, busco sempre criar soluções eficientes e impactantes. 
-            Se você está procurando uma programadora dedicada e pronta para enfrentar novos desafios, 
-            ficarei feliz em fazer parte da sua equipe. Entre em contato e vamos construir o futuro juntos!
-          </p>
-
-          {/* Contact Info */}
-          <div className="mb-8 space-y-2" data-aos="fade-up" data-aos-delay="300">
-            <p className="text-xl font-medium">emillydalmeida@gmail.com</p>
-            <p className="text-xl font-medium">85 99910-5460</p>
-          </div>
-
-          {/* Social Links */}
-          <div className="flex justify-center space-x-6 mb-8" data-aos="fade-up" data-aos-delay="400">
+          <div className="flex justify-center space-x-6">
             {socialLinks.map((link) => (
               <a
-                key={link.href}
-                href={link.href}
+                key={link.name}
+                href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 transform hover:scale-110"
+                className="bg-white/20 dark:bg-gray-700/50 p-3 rounded-full hover:bg-white/30 dark:hover:bg-gray-600/50 transition-colors duration-300"
+                aria-label={link.name}
               >
-                <Image src={link.icon} alt={link.alt} width={24} height={24} />
+                <Image
+                  src={link.icon}
+                  alt={link.name}
+                  width={24}
+                  height={24}
+                  className="filter brightness-0 invert"
+                />
               </a>
             ))}
           </div>
-
-          {/* Copyright */}
-          <div className="border-t border-white/20 pt-8 mt-8" data-aos="fade-up" data-aos-delay="500">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80">
-              <div>
-                <p>© {new Date().getFullYear()} Emilly Almeida. Todos os direitos reservados.</p>
-              </div>
-              
-              <div className="flex items-center gap-4">
-                <span>Desenvolvido com ❤️ por Emilly Almeida</span>
-                <span>•</span>
+        </div>
+        
+        <div className="border-t border-white/20 dark:border-gray-600/30 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-white/80 dark:text-gray-300">
+            <div>
+              <p>© {new Date().getFullYear()} Emilly Almeida. Todos os direitos reservados.</p>
+            </div>
+            <div>
+              <p>
+                Desenvolvido por Emilly | 
                 <a 
-                  href="https://github.com/emillydalmeida/emillydalmeida.github.io/blob/main/LICENSE"
-                  target="_blank"
+                  href="https://github.com/emillydalmeida/portfolio" 
+                  target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-white transition-colors duration-300 underline"
+                  className="ml-1 hover:text-white dark:hover:text-white transition-colors"
                 >
                   Licença MIT
                 </a>
-              </div>
+              </p>
             </div>
           </div>
         </div>

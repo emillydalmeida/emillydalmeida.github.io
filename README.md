@@ -9,6 +9,7 @@ Portfólio pessoal desenvolvido com Next.js, TypeScript, Tailwind CSS e animaç�
 - **Next.js 14**: Framework React com otimizações automáticas
 - **TypeScript**: Tipagem estática para melhor desenvolvimento
 - **Tailwind CSS**: Framework CSS utilitário para estilização rápida
+- **Modo Escuro**: Toggle entre tema claro e escuro com persistência
 - **Framer Motion**: Animações suaves e interativas
 - **AOS**: Animações ao rolar a página
 - **Responsivo**: Funciona perfeitamente em todos os dispositivos
@@ -37,6 +38,8 @@ Site modelo profissional para empresas de design divulgarem marca, projetos e pr
 
 - **Frontend:** React, Next.js 14, TypeScript
 - **Estilização:** Tailwind CSS, CSS Modules
+- **Tema:** next-themes (modo escuro/claro)
+- **Ícones:** Heroicons
 - **Animações:** Framer Motion, AOS
 - **Deploy:** GitHub Pages, Vercel
 - **Ferramentas:** ESLint, PostCSS, Autoprefixer
@@ -44,30 +47,14 @@ Site modelo profissional para empresas de design divulgarem marca, projetos e pr
 ## 📱 Características Técnicas
 
 - **Responsivo:** Adaptado para mobile, tablet e desktop
+- **Dark Mode:** Alternância automática e manual entre temas
 - **Performance:** Otimização automática de imagens e código
 - **SEO:** Meta tags e estrutura otimizada
 - **Acessibilidade:** Boas práticas de UX/UI
+- **Persistência:** Tema selecionado salvo no localStorage
 
 ## 📄 Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-### O que isso significa?
-
-✅ **Você pode:**
-- Usar comercialmente
-- Modificar o código
-- Distribuir
-- Usar privadamente
-
-⚠️ **Você deve:**
-- Incluir a licença e o aviso de copyright
-- Manter o mesmo tipo de licença
-
-❌ **Limitações:**
-- Sem garantia
-- Sem responsabilidade do autor
-
----
 
 Desenvolvido com ❤️ por **Emilly Almeida**

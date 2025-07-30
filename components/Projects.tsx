@@ -1,6 +1,9 @@
 import Image from 'next/image'
+import { useAOSInitialization } from '../hooks/useAOSInitialization'
 
 const Projects = () => {
+  useAOSInitialization()
+  
   const projects = [
     {
       id: 1,
@@ -33,13 +36,13 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-white">
+    <section id="projects" className="py-20 bg-gradient-to-br from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
       <div className="section-container">
         <div className="text-center mb-16" data-aos="fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-text-primary dark:text-white mb-6">
             Projetos em <span className="gradient-text">Destaque</span>
           </h2>
-          <p className="text-lg text-text-secondary max-w-3xl mx-auto">
+          <p className="text-lg text-text-secondary dark:text-gray-300 max-w-3xl mx-auto">
             De ideias abstratas a projetos bem-sucedidos, aqui estão alguns dos
             meus trabalhos mais recentes
           </p>
@@ -71,11 +74,11 @@ const Projects = () => {
 
               {/* Project Info */}
               <div className={`${project.reversed ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
-                <h3 className="text-3xl font-bold text-text-primary mb-4">
+                <h3 className="text-3xl font-bold text-text-primary dark:text-white mb-4">
                   {project.title}
                 </h3>
                 
-                <p className="text-text-secondary mb-6 leading-relaxed">
+                <p className="text-text-secondary dark:text-gray-300 mb-6 leading-relaxed">
                   {project.description}
                 </p>
 
@@ -84,7 +87,7 @@ const Projects = () => {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-brand-primary/10 text-brand-primary rounded-full text-sm font-medium"
+                      className="px-3 py-1 bg-brand-primary/10 dark:bg-brand-secondary/20 text-brand-primary dark:text-brand-secondary rounded-full text-sm font-medium"
                     >
                       {tech}
                     </span>
@@ -107,7 +110,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="px-6 py-3 border-2 border-brand-primary text-brand-primary hover:bg-brand-primary hover:text-white rounded-lg transition-all duration-300 font-medium"
+                    className="px-6 py-3 border-2 border-brand-primary dark:border-brand-secondary text-brand-primary dark:text-brand-secondary hover:bg-brand-primary dark:hover:bg-brand-secondary hover:text-white dark:hover:text-gray-900 rounded-lg transition-all duration-300 font-medium"
                   >
                     Repositório 
                   </a>
