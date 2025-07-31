@@ -33,7 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
           <meta property="og:type" content="website" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Component {...pageProps} />
+        <div className="w-full min-h-screen">
+          <Component {...pageProps} />
+        </div>
       </ThemeProvider>
     </LanguageProvider>
   )

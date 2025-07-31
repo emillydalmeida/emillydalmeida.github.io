@@ -19,23 +19,23 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg z-50 transition-colors duration-300">
-      <div className="mx-auto px-3 sm:px-4 lg:px-8 max-w-7xl">
-        <div className="flex items-center justify-between py-2 sm:py-3 md:py-4 min-w-0">
-          {/* Logo */}
-          <Link href="/" className="flex items-center flex-shrink-0">
+      <div className="section-container">
+        <div className="flex items-center justify-between py-4">
+          {/* Logo - Responsivo */}
+          <Link href="/" className="flex items-center flex-shrink-0 min-w-0">
             <Image 
               src="/logo.svg" 
               alt="Emilly Almeida" 
-              width={100}
-              height={32}
-              className="h-6 sm:h-8 md:h-10 w-auto"
+              width={120}
+              height={40}
+              className="h-8 md:h-10 w-auto max-w-[120px] md:max-w-none"
               loading="eager"
             />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            <ul className="flex items-center space-x-6 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
+            <ul className="flex items-center space-x-8">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a 
@@ -47,28 +47,32 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-3">
               <LanguageToggle />
               <ThemeToggle />
             </div>
           </div>
 
-          {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-1 flex-shrink-0">
-            <LanguageToggle />
-            <ThemeToggle />
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="p-1.5 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-            >
-              <Image 
-                src="/menu.svg" 
-                alt="Menu" 
-                width={18}
-                height={18}
-                loading="lazy"
-              />
-            </button>
+          {/* Mobile Controls - Layout otimizado */}
+          <div className="md:hidden flex-shrink-0 ml-2">
+            <div className="flex items-center space-x-2">
+              <div className="flex items-center space-x-1">
+                <LanguageToggle />
+                <ThemeToggle />
+              </div>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ml-1"
+              >
+                <Image 
+                  src="/menu.svg" 
+                  alt="Menu" 
+                  width={24}
+                  height={24}
+                  loading="lazy"
+                />
+              </button>
+            </div>
           </div>
         </div>
 
