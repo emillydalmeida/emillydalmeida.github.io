@@ -7,10 +7,10 @@ const LanguageToggle = () => {
   const { language, setLanguage } = useLanguage()
 
   return (
-    <div className="flex items-center space-x-1 md:space-x-2 bg-gray-100 dark:bg-gray-800 rounded-full p-0.5 md:p-1 transition-colors duration-300">
+    <div className="flex items-center space-x-0.5 md:space-x-2 bg-gray-100 dark:bg-gray-800 rounded-full p-0.5 transition-colors duration-300">
       <button
         onClick={() => setLanguage('pt')}
-        className={`flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full transition-all duration-300 ${
+        className={`flex items-center justify-center w-5 h-5 md:w-8 md:h-8 rounded-full transition-all duration-300 ${
           language === 'pt'
             ? 'bg-white dark:bg-gray-700 shadow-md scale-105'
             : 'hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -21,8 +21,8 @@ const LanguageToggle = () => {
         <Image 
           src="/brasil.svg" 
           alt="Brasil" 
-          width={16} 
-          height={12}
+          width={12} 
+          height={9}
           className="rounded-sm md:w-5 md:h-4"
           loading="lazy"
         />
@@ -30,7 +30,7 @@ const LanguageToggle = () => {
       
       <button
         onClick={() => setLanguage('en')}
-        className={`flex items-center justify-center w-6 h-6 md:w-8 md:h-8 rounded-full transition-all duration-300 ${
+        className={`flex items-center justify-center w-5 h-5 md:w-8 md:h-8 rounded-full transition-all duration-300 ${
           language === 'en'
             ? 'bg-white dark:bg-gray-700 shadow-md scale-105'
             : 'hover:bg-gray-200 dark:hover:bg-gray-700'
@@ -41,8 +41,8 @@ const LanguageToggle = () => {
         <Image 
           src="/usa.svg" 
           alt="United States" 
-          width={16} 
-          height={12}
+          width={12} 
+          height={9}
           className="rounded-sm md:w-5 md:h-4"
           loading="lazy"
         />

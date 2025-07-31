@@ -20,15 +20,15 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg z-50 transition-colors duration-300">
       <div className="section-container">
-        <div className="flex items-center justify-between py-4">
+        <div className="flex items-center justify-between py-2 md:py-4">
           {/* Logo - Responsivo */}
           <Link href="/" className="flex items-center flex-shrink-0 min-w-0">
             <Image 
               src="/logo.svg" 
               alt="Emilly Almeida" 
-              width={120}
-              height={40}
-              className="h-8 md:h-10 w-auto max-w-[120px] md:max-w-none"
+              width={100}
+              height={32}
+              className="h-6 md:h-10 w-auto max-w-[80px] md:max-w-[120px]"
               loading="eager"
             />
           </Link>
@@ -53,26 +53,22 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Mobile Controls - Layout otimizado */}
-          <div className="md:hidden flex-shrink-0 ml-2">
-            <div className="flex items-center space-x-2">
-              <div className="flex items-center space-x-1">
-                <LanguageToggle />
-                <ThemeToggle />
-              </div>
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors ml-1"
-              >
-                <Image 
-                  src="/menu.svg" 
-                  alt="Menu" 
-                  width={24}
-                  height={24}
-                  loading="lazy"
-                />
-              </button>
-            </div>
+          {/* Mobile Controls - Ultra Compacto */}
+          <div className="md:hidden flex items-center space-x-1 flex-shrink-0">
+            <LanguageToggle />
+            <ThemeToggle />
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="p-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              <Image 
+                src="/menu.svg" 
+                alt="Menu" 
+                width={20}
+                height={20}
+                loading="lazy"
+              />
+            </button>
           </div>
         </div>
 
