@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -60,7 +58,6 @@
   opacity: 1;
 }
 
-/* Custom animations */
 .animate-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -68,4 +65,15 @@
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
+}
+
+@layer utilities {
+  .emoji-flag {
+    font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Android Emoji", "EmojiSymbols", "Twemoji Mozilla", sans-serif !important;
+    font-feature-settings: "liga" off;
+    font-variant-emoji: emoji;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }

@@ -37,7 +37,7 @@ const Header = () => {
                   width={400}
                   height={500}
                   className="rounded-2xl object-cover animate-float"
-                  priority
+                  loading="eager"
                 />
               </div>
               {/* Background decoration */}

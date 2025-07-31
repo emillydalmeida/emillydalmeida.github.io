@@ -86,7 +86,6 @@ export const translations = {
         email: "Enviar email",
         linkedin: "Conectar no LinkedIn", 
         github: "Ver perfil no GitHub",
-        instagram: "Seguir no Instagram"
       }
     },
     
@@ -184,7 +183,6 @@ export const translations = {
         email: "Send email",
         linkedin: "Connect on LinkedIn",
         github: "View GitHub profile", 
-        instagram: "Follow on Instagram"
       }
     },
     

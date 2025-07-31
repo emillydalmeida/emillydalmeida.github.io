@@ -89,7 +89,7 @@ const About = () => {
                 width={400}
                 height={400}
                 className="rounded-2xl shadow-2xl dark:shadow-gray-900/50"
-                priority
+                loading="eager"
               />
               
               {/* Decorative gradient overlay */}
