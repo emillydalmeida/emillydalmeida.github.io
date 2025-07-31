@@ -7,7 +7,6 @@ const About = () => {
   const { t } = useLanguage()
   
   const socialLinks = [
-    { href: 'https://instagram.com/emillydalmeida', icon: '/instagram.svg', alt: 'Instagram' },
     { href: 'https://www.linkedin.com/in/emillydalmeida/', icon: '/linkedin.svg', alt: 'LinkedIn' },
     { href: 'https://github.com/emillydalmeida', icon: '/github.svg', alt: 'GitHub' },
   ]

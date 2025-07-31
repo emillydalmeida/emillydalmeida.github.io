@@ -11,7 +11,6 @@ const Footer = () => {
   const socialLinks = [
     { name: 'GitHub', icon: '/github.svg', url: 'https://github.com/emillydalmeida' },
     { name: 'LinkedIn', icon: '/linkedin.svg', url: 'https://linkedin.com/in/emillydalmeida' },
-    { name: 'Instagram', icon: '/instagram.svg', url: 'https://instagram.com/emillydalmeida' },
     { name: 'Email', icon: '/email.svg', url: 'mailto:emilly@example.com' }
   ]
 

@@ -18,9 +18,9 @@ const Navbar = () => {
   ]
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg z-50 transition-colors duration-300">
-      <div className="section-container">
-        <div className="flex items-center justify-between py-4">
+    <nav className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md shadow-lg z-50 transition-colors duration-300 overflow-hidden">
+      <div className="section-container max-w-full">
+        <div className="flex items-center justify-between py-3 md:py-4 gap-2 md:gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image 
@@ -28,7 +28,7 @@ const Navbar = () => {
               alt="Emilly Almeida" 
               width={120}
               height={40}
-              className="h-10 w-auto"
+              className="h-8 md:h-10 w-auto"
             />
           </Link>
 
@@ -53,7 +53,7 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button and Theme Toggle */}
-          <div className="md:hidden flex items-center space-x-2">
+          <div className="md:hidden flex items-center space-x-1">
             <LanguageToggle />
             <ThemeToggle />
             <button
@@ -63,8 +63,8 @@ const Navbar = () => {
               <Image 
                 src="/menu.svg" 
                 alt="Menu" 
-                width={24}
-                height={24}
+                width={20}
+                height={20}
               />
             </button>
           </div>
